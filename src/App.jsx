@@ -64,15 +64,15 @@ function App() {
    }
 
   return (
-    <section className=' flex justify-center items-center bg-slate-200  border  h-screen '>
-        <div className=' overflow-hidden md:rounded-lg h-full md:h-[90vh]  md:shadow-lg shadow-cyan-700  lg:w-[700px] '>
+    <section className=' flex justify-center items-center bg-slate-200   h-screen '>
+        <div className=' overflow-x-hidden md:rounded-lg h-full md:h-[90vh]  md:shadow-lg shadow-cyan-700  lg:w-[700px] '>
           <div className=' bg-cyan-500 text-white p-4  w-full text-center '>
           <h1 className='  text-3xl  font-semibold'>Welcome to the HNG Color Guessing Game</h1>
          
              
           </div>
          
-          <div className=" h-full flex flex-col justify-center items-center  bg-gray-700">
+          <div className=" h-full flex flex-col justify-center items-center p-3  bg-gray-700">
 
             <div className=' text-white w-96 mt-8 text-center'>
                <h2>
@@ -91,7 +91,7 @@ function App() {
   
             )
            }
-            <div className=' w-full grid grid-cols-3 gap-4 p-4 '>
+            <div className=' w-full grid grid-cols-2 md:grid-cols-3 gap-4 p-4 '>
             {colorOption.map((color, index) => (
               <button key={index} className=' h-44 rounded-lg hover:opacity-75   transition-colors duration-700' style={{ backgroundColor: `rgb(${color})` }} onClick={() => handleClick(color)}>
                 Guess
