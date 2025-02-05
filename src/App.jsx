@@ -25,36 +25,33 @@ function App() {
 
   const [correctColor, setCorrectColor] = useState(generateRandomColor())
   const [colorOption, setColorOption] =  useState(generateColorOptions(correctColor))
-  const [ score, setScore] = useState(0);
+  const [score, setScore] = useState(() => {
+    const savedScore = localStorage.getItem('colorGameScore');
+    return savedScore ? parseInt(savedScore, 10) : 0;
+  });
+  
   const [message, setMessage] = useState("");
 
    const handleClick = (selectedColor)=> {
          if(selectedColor === correctColor){
              alert('You Guessed Correctly  🎉')
              setMessage('You Guessed Correctly 🎉')
-             startNewGame()
-           
-           updateScore()
+            setScore(score + 1)      
+            resetGame()
          } 
           else{
             alert('Wrong Color Try Again 😢')
             setMessage('Wrong Color Try Again 😢')
           }
    }
+
+
+
  
-   const updateScore = ()=>{
-     const newscore = score + 1
-     localStorage.setItem('score', JSON.stringify(newscore));
-    setScore(newscore)
-   }
-
-   useEffect(()=>{
-     const savedScore = localStorage.getItem('score')
-
-    if (savedScore) {
-       setScore(JSON.parse(savedScore))
-    }
-   },[])
+  useEffect(() => {
+    localStorage.setItem('colorGameScore', score.toString());
+  }, [score]);
+ 
 
 
    const resetGame = ()=>{
@@ -66,16 +63,18 @@ function App() {
 
    }
 
-   const startNewGame =()=>{
-    setScore( ()=> (
-      localStorage.removeItem('score'),
-      0
-    ))
+  
 
+   const startNewGame =()=>{
+
+    setScore(0)
     setTimeout(() => {
       resetGame()
-   }, 1000);
+     
+   }, 400);
    }
+
+ 
 
   return (
     <section className=' flex justify-center items-center bg-slate-200   h-screen '>
