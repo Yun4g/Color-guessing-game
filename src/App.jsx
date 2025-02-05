@@ -77,15 +77,16 @@ function App() {
  
 
   return (
-    <section className=' lg:flex justify-center  items-center bg-slate-200  lg:h-screen  '>
-        <div className=' flex items-center flex-col justify-center   lg:rounded-lg h-full  lg:h-4/6   w-full  lg:w-[700px] '>
+    <section className=' lg:flex justify-center  items-center bg-slate-200  h-full  '>
+        <div className=' lg:flex items-center flex-col justify-center   lg:rounded-lg h-full  lg:h-4/6   w-full  lg:w-[700px] '>
           <div className=' bg-cyan-500 text-white p-4   w-full text-center '>
+            
           <h1 className='  text-xl  md:text-3xl  font-semibold'>Welcome to the HNG Color Guessing Game</h1>
          
              
           </div>
          
-          <div className="  flex flex-col justify-center  lg:rounded-b-lg    items-center p-3  w-full bg-gray-700">
+          <div className="  flex flex-col justify-center  lg:rounded-b-lg    items-center p-3   w-full bg-gray-700">
 
             <div data-testid="gameInstructions" className=' text-white px-9 md:px-0 mb-3 w-96 mt-8 text-center'>
                <h2>
