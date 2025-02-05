@@ -79,20 +79,20 @@ function App() {
 
   return (
     <section className=' flex justify-center items-center bg-slate-200   h-screen '>
-        <div className=' overflow-x-hidden md:rounded-lg h-full md:h-[90vh]  md:shadow-lg shadow-cyan-700  lg:w-[700px] '>
+        <div className=' overflow-x-hidden md:rounded-lg h-full md:h-[90vh]  md:shadow-lg shadow-cyan-700   lg:w-[700px] '>
           <div className=' bg-cyan-500 text-white p-4  w-full text-center '>
           <h1 className='  text-xl  md:text-3xl  font-semibold'>Welcome to the HNG Color Guessing Game</h1>
          
              
           </div>
          
-          <div className=" h-fit lg:h-11/12 flex flex-col justify-center items-center p-3  bg-gray-700">
+          <div className=" h-fit lg:h-11/12 flex flex-col justify-center  rounded-b-lg  items-center p-3  bg-gray-700">
 
             <div data-testid="gameInstructions" className=' text-white px-9 md:px-0 mb-3 w-96 mt-8 text-center'>
                <h2>
                  How to play
                </h2>
-              <p className=''>Select any color that matches with the rgb color code you get (1 point) if you get it correctly 
+              <p className=''>Select any color that matches with the target color you get (1 point) if you get it correctly 
                  Good Luck 🤗😎
  
               </p>
@@ -100,8 +100,7 @@ function App() {
             {
             correctColor && (
                 <div style={{ backgroundColor: `rgb(${correctColor})` }} className="correct-color-container transition-colors duration-700 relative  flex justify-center items-center  h-72 w-96 rounded-lg bg-white">
-                  <h3 data-testid="colorBox" className='lg:text-2xl text-red-800 absolute  '  > RGB({correctColor})</h3>
-
+               
                 </div>
   
             )
