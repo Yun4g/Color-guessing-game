@@ -100,7 +100,7 @@ function App() {
             <div className='flex flex-col lg:flex-row justify-center items-center gap-3 w-full'>
             {
             correctColor && (
-                <div style={{ backgroundColor: `rgb(${correctColor})` }} className="correct-color-container transition-colors duration-700 relative  flex justify-center items-center  h-48   w-9/12 md:w-1/2 rounded-lg bg-white">
+                <div  data-testid="colorBox" style={{ backgroundColor: `rgb(${correctColor})` }} className="correct-color-container transition-colors duration-700 relative  flex justify-center items-center  h-48   w-9/12 md:w-1/2 rounded-lg bg-white">
                  
                 </div>
   
